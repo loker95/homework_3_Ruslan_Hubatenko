@@ -22,20 +22,42 @@
 #     print("Введите число пожалуйста ")
 # except Exception as error:
 #     print(f"Error: {error}")
-
-
-############################
+#
+#
+# ############################
+# try:
+#     user_number_1, user_number_2 = int(input("Ваше первое число ")), int(input("Ваше второе число "))
+#
+#     if user_number_1 == user_number_2:
+#         print("Числа равны")
+#     elif user_number_1 > user_number_2:
+#         print(user_number_2, user_number_1)
+#     elif user_number_2 > user_number_1:
+#         print(user_number_1, user_number_2)
+#
+# except ValueError as error:
+#     print("Введите числовые данные")
+# except Exception as error:
+#     print(f"Error: {error}")
+#
 try:
-    user_number_1, user_number_2 = int(input("Ваше первое число ")), int(input("Ваше второе число "))
+    first_user_number = int(input("Ваше первое число "))
+    second_user_number = int(input("Ваше второе число "))
 
-    if user_number_1 == user_number_2:
-        print("Числа равны")
-    elif user_number_1 > user_number_2:
-        print(user_number_2, user_number_1)
-    elif user_number_2 > user_number_1:
-        print(user_number_1, user_number_2)
+    ongoing_operation = input("Пожвлуйста выберите операцию из предложеных - (+, -, *, /) ")
+    match ongoing_operation:
+        case "*":
+            print(first_user_number * second_user_number)
+        case "/":
+            print(first_user_number / second_user_number)
+        case "+":
+            print(first_user_number + second_user_number)
+        case "-":
+            print(first_user_number - second_user_number)
+        case _:
+            print("Выберите математическую операцию из предложенных")
 
 except ValueError as error:
-    print("Введите числовые данные")
+    print("Выберите числовые данные")
 except Exception as error:
     print(f"Error: {error}")
